@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="blood.css">
+    <link rel="stylesheet" href="Feedback.css">
+    <style>
+        .dropdown-img:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="h-screen w-screen flex flex-col overflow-y-hidden ">
+    <nav class="w-full flex justify-between px-5  shadow bg-white items-center">
+        <div class="flex-1 flex items-center text-xl font-bold  font-header">
+            <span class=" overflow-hidden ">
+                <img src="img/doctor-logo.png" alt="" class="h-16 object-cover">
+            </span>
+        </div>
+        <div class="dropdown-img inline-block relative w-48 py-1 text-right  ">
+
+            <span class="text-red-600 flex list-none justify-center ">
+                <img src="img/donor.png " alt="" class="h-12 w-12">
+            </span>
+            <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 w-full button-0 right-0 mr-1  px-3 ">
+                <li
+                    class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                    <a href="#" class="rounded-t bg-gray-300 hover:bg-red-600 hover:text-white py-2 px-4 block"
+                        href="#">Profile</a>
+                </li>
+                <li
+                    class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                    <a href="#" class="rounded-t bg-gray-300 hover:bg-red-600 hover:text-white py-2 px-4 block"
+                        href="#">Change Password</a>
+                </li>
+                <li
+                    class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                    <a href="#"
+                        class="bg-gray-300  py-2 px-4 block whitespace-no-wrap hover:bg-red-600 hover:text-white "
+                        href="#">logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--content part-->
+    <div class="w-full flex justify-between items-center">
+        <!--card and form part-->
+        <div class="flex flex-col flex-1">
+            <section class="flex justify-center w-full">
+                <a href="#"
+                    class="flex flex-col bg-gray-200 hover:text-white hover:bg-red-600 h-auto w-48  rounded-lg shadow-md items-center overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:focous">
+                    <div class="flex justify-center h-auto w-full bg-blue-200 rounded-b-full">
+                        <img src="img/appointment.png" alt="" class="h-32 w-32">
+                    </div>
+                    <div class="font-body text-xl text-center font-bold  px-3 py-4 mt-3">View Appointment Request</div>
+
+                </a>
+                <a href="#"
+                    class="flex flex-col bg-gray-200  hover:bg-red-600 hover:text-white h-auto w-48 ml-4 rounded-lg shadow-md items-center overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="flex justify-center h-32 w-full bg-green-300 rounded-b-full">
+                        <img src="img/report.png" alt="" class="h-32 w-32">
+                    </div>
+                    <div class="font-body text-xl text-center font-bold  mt-3 px-5 py-4">View Lap Report</div>
+                </a>
+            </section>
+        </div>
+        <!-- blood img-->
+        <div class="flex flex-1 py-5">
+            <img src="img/doctorbg.jpg" alt="" class="w-full object-cover">
+        </div>
+
+    </div>
+</body>
+
+</html>
