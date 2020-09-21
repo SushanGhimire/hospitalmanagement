@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="blood.css">
+    <link rel="stylesheet" href="Feedback.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <style>
+        .dropdown-img:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-header:hover .dropdown-menu {
+            display: block;
+        }
+
+        .textcolor {
+            color: rgba(51, 108, 251, 0.5);
+        }
+    </style>
+</head>
+
+<body class="h-screen w-screen flex flex-col overflow-y-hidden font-header ">
+    <div class="w-full h-full flex flex-col">
+        <nav class="w-full flex justify-between px-5  shadow-lg bg-white items-center">
+            <div class="w-64 flex items-center text-xl font-bold  font-header">
+                <span class=" overflow-hidden ">
+                    <img src="img/doctor-logo.png" alt="" class="h-16 object-cover">
+                </span>
+            </div>
+            <!--searchbox-->
+            <div class="relative mr-6 my-2 flex-1 flex justify-star items-center">
+                <input type="search"
+                    class="bg-purple-white shadow px-10 border-0 p-3 rounded-full focus:outline-none focus:shadow-outline relative bg-gray-300"
+                    placeholder="Search by name...">
+                <i class="fas fa-search text-gray-500  text-xl absolute buttom-0 left-0 "
+                    style="margin-left:244px;"></i>
+            </div>
+            <div class="dropdown-img inline-block relative w-48 py-1 text-right x-50 ">
+
+                <span class=" flex list-none justify-center items-center ">
+                    <img src="img/donor.png " alt="" class="h-12 w-12">
+                    <i class="fas fa-chevron-down ml-2"></i>
+                </span>
+                <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 w-full button-0 right-0 mr-1  px-3 z-50 ">
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="rounded-t bg-gray-300 hover:bg-red-600 hover:text-white py-2 px-4 block"
+                            href="#">Profile</a>
+                    </li>
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="rounded-t bg-gray-300 hover:bg-red-600 hover:text-white py-2 px-4 block"
+                            href="#">Change Password</a>
+                    </li>
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#"
+                            class="bg-gray-300  py-2 px-4 block whitespace-no-wrap hover:bg-red-600 hover:text-white "
+                            href="#">logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--header-->
+        <header class="w-full flex justify-center mt-3 py-2">
+            <!--dashboard-->
+            <div class="inline-block relative w-48 py-1 text-right  ">
+                <span class="flex list-none justify-center cursor-pointer font-semibold text-gray-800">
+                    Dashboard
+                </span>
+            </div>
+            <!--medicine-->
+            <div class="dropdown-header inline-block relative w-48 py-1 text-right text-gray-800 ">
+                <div class="flex list-none justify-center cursor-pointer items-center hover:text-blue-600">
+                    <span class="font-semibold">
+                        Medicine
+                    </span>
+                    <i class="fas fa-chevron-down ml-2"></i>
+                </div>
+                <ul
+                    class="dropdown-menu absolute hidden text-gray-700 pt-1 w-full button-0 right-0 mr-1 shadow-md  px-3 z-50 bg-white ">
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="rounded-t  hover:bg-red-600 hover:text-white py-2 px-4 block"
+                            href="#">AAAAAAAAAAAA</a>
+                    </li>
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="rounded-t  hover:bg-red-600 hover:text-white py-2 px-4 block"
+                            href="#">BBBBBBBBBBB</a>
+                    </li>
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="  py-2 px-4 block whitespace-no-wrap hover:bg-red-600 hover:text-white "
+                            href="#">CCCCCCCCCCC</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Appointment-->
+            <div class="dropdown-header inline-block relative w-48 py-1 text-right text-gray-800 ">
+                <div class="flex list-none justify-center cursor-pointer items-center hover:text-blue-600">
+                    <span class="font-semibold">
+                        Appointment
+                    </span>
+                    <i class="fas fa-chevron-down ml-2"></i>
+                </div>
+                <ul
+                    class="dropdown-menu absolute hidden text-gray-700 pt-1 w-full button-0 right-0 mr-1 shadow-md  px-3 z-50 bg-white ">
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="rounded-t  hover:bg-red-600 hover:text-white py-2 px-4 block"
+                            href="#">AAAAAAAAAAAA</a>
+                    </li>
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="rounded-t  hover:bg-red-600 hover:text-white py-2 px-4 block"
+                            href="#">BBBBBBBBBBB</a>
+                    </li>
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="  py-2 px-4 block whitespace-no-wrap hover:bg-red-600 hover:text-white "
+                            href="#">CCCCCCCCCCC</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Doctor Department-->
+            <div class="dropdown-header inline-block relative w-48 py-1 text-right text-gray-800 ">
+                <div class="flex list-none justify-center cursor-pointer items-center hover:text-blue-600">
+                    <span class="font-semibold">
+                        Doctor Department
+                    </span>
+                    <i class="fas fa-chevron-down ml-2"></i>
+                </div>
+                <ul
+                    class="dropdown-menu absolute hidden text-gray-700 pt-1 w-full button-0 right-0 mr-1 shadow-md  px-3 z-50 bg-white  ">
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="rounded-t  hover:bg-red-600 hover:text-white py-2 px-4 block"
+                            href="#">AAAAAAAAAAAA</a>
+                    </li>
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="rounded-t  hover:bg-red-600 hover:text-white py-2 px-4 block"
+                            href="#">BBBBBBBBBBB</a>
+                    </li>
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="  py-2 px-4 block whitespace-no-wrap hover:bg-red-600 hover:text-white "
+                            href="#">CCCCCCCCCCC</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Patients-->
+            <div class="dropdown-header inline-block relative w-48 py-1 text-right text-gray-800 ">
+                <div class="flex list-none justify-center cursor-pointer items-center hover:text-blue-600">
+                    <span class="font-semibold">
+                        Patients
+                    </span>
+                    <i class="fas fa-chevron-down ml-2"></i>
+                </div>
+                <ul
+                    class="dropdown-menu absolute hidden text-gray-700 pt-1 w-full button-0 right-0 mr-1 shadow-md  px-3 z-50 bg-white ">
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="rounded-t  hover:bg-red-600 hover:text-white py-2 px-4 block"
+                            href="#">AAAAAAAAAAAA</a>
+                    </li>
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="rounded-t  hover:bg-red-600 hover:text-white py-2 px-4 block"
+                            href="#">BBBBBBBBBBB</a>
+                    </li>
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="  py-2 px-4 block whitespace-no-wrap hover:bg-red-600 hover:text-white "
+                            href="#">CCCCCCCCCCC</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Payment-->
+            <div class="dropdown-header inline-block relative w-48 py-1 text-right  text-gray-800">
+                <div class="flex list-none justify-center cursor-pointer items-center hover:text-blue-600">
+                    <span class="font-semibold">
+                        Payment
+                    </span>
+                    <i class="fas fa-chevron-down ml-2"></i>
+                </div>
+                <ul
+                    class="dropdown-menu absolute hidden text-gray-700 pt-1 w-full button-0 right-0 mr-1 shadow-md  px-3 z-50 bg-white ">
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="rounded-t  hover:bg-red-600 hover:text-white py-2 px-4 block"
+                            href="#">AAAAAAAAAAAA</a>
+                    </li>
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="rounded-t  hover:bg-red-600 hover:text-white py-2 px-4 block"
+                            href="#">BBBBBBBBBBB</a>
+                    </li>
+                    <li
+                        class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <a href="#" class="  py-2 px-4 block whitespace-no-wrap hover:bg-red-600 hover:text-white "
+                            href="#">CCCCCCCCCCC</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!--content part-->
+        <section class="w-full h-full overflow-auto flex flex-col  ">
+            <!--card part-->
+            <div class="w-full h-20 flex justify-between px-20 mt-8 mb-0">
+                <!--appointments-->
+                <a href="#"
+                    class=" items-center flex  shadow-lg p-2 bg-gray-200 rounded-md hover:bg-gray- transition-all duration-300 transform hover:-translate-y-1"
+                    style="width: 280px;">
+                    <span class="w-20 flex items-center text-5xl textcolor p-2">
+                        <i class="fas fa-briefcase-medical"></i>
+                    </span>
+                    <div class="flex-1 flex flex-col justify-center p-3 text-xl">
+                        <span class="">
+                            Appointment
+                        </span>
+                        <span class="text-blue-600 font-semibold text-xl">
+                            200
+                        </span>
+                    </div>
+                </a>
+                <!--patient-->
+                <a href="#"
+                    class=" items-center flex  shadow-lg p-2 bg-gray-200 rounded-md hover:bg-gray-300 transition-all duration-300 transform hover:-translate-y-1"
+                    style="width: 280px;">
+                    <span class="w-20 flex items-center text-5xl textcolor p-2">
+                        <i class="fas fa-wheelchair"></i>
+                    </span>
+                    <div class="flex-1 flex flex-col justify-center p-3 text-xl">
+                        <span class="">
+                            Patients
+                        </span>
+                        <span class="text-blue-600 font-semibold text-xl">
+                            200
+                        </span>
+                    </div>
+                </a>
+                <!--operation-->
+                <a href="#"
+                    class=" items-center flex  shadow-lg p-2 bg-gray-200 rounded-md hover:bg-gray-300 transition-all duration-300 transform hover:-translate-y-1"
+                    style="width: 280px;">
+                    <span class="w-20 flex items-center text-5xl textcolor p-2">
+                        <i class="fas fa-user-md"></i>
+                    </span>
+                    <div class="flex-1 flex flex-col justify-center p-3 text-xl">
+                        <span class="">
+                            Operations
+                        </span>
+                        <span class="text-blue-600 font-semibold text-xl">
+                            200
+                        </span>
+                    </div>
+                </a>
+                <!--Hospital earning-->
+                <a href="#"
+                    class=" items-center flex  shadow-lg p-2 bg-gray-200 rounded-md hover:bg-gray-300 transition-all duration-300 transform hover:-translate-y-1"
+                    style="width: 280px;">
+                    <span class="w-20 flex items-center text-5xl textcolor p-2">
+                        <i class="fas fa-dollar-sign"></i>
+                    </span>
+                    <div class="flex-1 flex flex-col justify-center p-3 text-xl">
+                        <span class="">
+                            Hospital earning
+                        </span>
+                        <span class="text-blue-600 font-semibold text-xl">
+                            200
+                        </span>
+                    </div>
+                </a>
+            </div>
+            <!--line graph-->
+            <div class="w-full py-5 px-20 mt-5">
+                <span class="text-2xl px-5">Hospital Survay</span>
+                <canvas id="line-chart" width="800" height="300"></canvas>
+            </div>
+            <!--income part-->
+            <div class="w-full flex py-4 px-20">
+                <div class="flex-1 flex flex-col shadow-lg  mr-5 bg-gray-100">
+                    <div class="w-full flex flex-col">
+                        <span class="font-bold text-2xl px-3 mt-2 py-1">
+                            $ 25000
+                        </span>
+                        <span class="text-gray-600 px-3">
+                            Income in current month
+                        </span>
+                        <div class="w-full">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 flex flex-col shadow-lg bg-gray-100">
+                    <div class="w-full flex flex-col">
+                        <span class="font-bold text-2xl px-3 mt-2 py-1">
+                            $ 25000
+                        </span>
+                        <span class="text-gray-600 px-3">
+                            Income in current month
+                        </span>
+                        <div class="w-full ">
+                            <canvas id="myChart2"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--patient parts-->
+            <div class="w-full flex py-4 px-20 mt-20">
+                <div class="flex-1 flex flex-col shadow-lg bg-gray-100 mr-10">
+                    <div class="w-full flex flex-col">
+                        <span class="font-bold text-2xl px-5 py-2">
+                            Patients Age
+                        </span>
+                        <div class="w-full h-64">
+                            <canvas id="myChart3"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 flex flex-col shadow-lg mr-10 bg-gray-100">
+                    <div class="w-full flex flex-col">
+                        <span class="font-bold text-2xl px-5 py-2">
+                            Patients Gender
+                        </span>
+                        <div class="w-full h-64">
+                            <canvas id="myChart4"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="flex-1 flex flex-col shadow-lg bg-gray-100">
+                    <div class="w-full flex flex-col">
+                        <span class="font-bold text-2xl px-5 py-2">
+                            Departments
+                        </span>
+                        <div class="w-full h-64">
+                            <canvas id="myChart5"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--table part-->
+            <div class="w-full flex flex-col px-20 mt-5">
+                <span class="font-bold text-2xl">
+                    Last Appointments
+                </span>
+                <table class="table-auto border w-full mt-5 mb-5">
+                    <thead>
+                        <tr class="bg-gray-200 text-black">
+                            <th class="px-4 py-2">Photo</th>
+                            <th class="px-4 py-2"> Name</th>
+                            <th class="px-4 py-2">Email</th>
+                            <th class="px-4 py-2">Date</th>
+                            <th class="px-4 py-2">Visit Time</th>
+                            <th class="px-4 py-2">Number</th>
+                            <th class="px-4 py-2">Doctor</th>
+                            <th class="px-4 py-2">Injury/Condition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-100 hover:bg-gray-200 hover:shadow-sm">
+                            <td class="box-border border-b px-4 py-3 text-center"><span
+                                    class=" flex list-none justify-center items-center ">
+                                    <img src="img/donor.png " alt="" class="h-12 w-12">
+                                </span></td>
+                            <td class="box-border border-b px-4 py-3 text-center">Sushan </td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">Sushangmi55@gmail.com
+                            </td>
+                            <td class="box-border border-b px-4 py-3 text-center">18Sep2020</td>
+                            <td class="box-border border-b px-4 py-3 text-center">10:55-11:30</td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">9876543210</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Dr.vatiz</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Depression</td>
+
+                        </tr>
+                        <tr
+                            class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-100 hover:bg-gray-200 hover:shadow-sm">
+                            <td class="box-border border-b px-4 py-3 text-center"><span
+                                    class=" flex list-none justify-center items-center ">
+                                    <img src="img/donor.png " alt="" class="h-12 w-12">
+                                </span></td>
+                            <td class="box-border border-b px-4 py-3 text-center">Sushan </td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">Sushangmi55@gmail.com
+                            </td>
+                            <td class="box-border border-b px-4 py-3 text-center">18Sep2020</td>
+                            <td class="box-border border-b px-4 py-3 text-center">10:55-11:30</td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">9876543210</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Dr.vatiz</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Depression</td>
+
+                        </tr>
+                        <tr
+                            class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-100 hover:bg-gray-200 hover:shadow-sm">
+                            <td class="box-border border-b px-4 py-3 text-center"><span
+                                    class=" flex list-none justify-center items-center ">
+                                    <img src="img/donor.png " alt="" class="h-12 w-12">
+                                </span></td>
+                            <td class="box-border border-b px-4 py-3 text-center">Sushan </td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">Sushangmi55@gmail.com
+                            </td>
+                            <td class="box-border border-b px-4 py-3 text-center">18Sep2020</td>
+                            <td class="box-border border-b px-4 py-3 text-center">10:55-11:30</td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">9876543210</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Dr.vatiz</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Depression</td>
+
+                        </tr>
+                        <tr
+                            class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-100 hover:bg-gray-200 hover:shadow-sm">
+                            <td class="box-border border-b px-4 py-3 text-center"><span
+                                    class=" flex list-none justify-center items-center ">
+                                    <img src="img/donor.png " alt="" class="h-12 w-12">
+                                </span></td>
+                            <td class="box-border border-b px-4 py-3 text-center">Sushan </td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">Sushangmi55@gmail.com
+                            </td>
+                            <td class="box-border border-b px-4 py-3 text-center">18Sep2020</td>
+                            <td class="box-border border-b px-4 py-3 text-center">10:55-11:30</td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">9876543210</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Dr.vatiz</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Depression</td>
+
+                        </tr>
+                        <tr
+                            class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-100 hover:bg-gray-200 hover:shadow-sm">
+                            <td class="box-border border-b px-4 py-3 text-center"><span
+                                    class=" flex list-none justify-center items-center ">
+                                    <img src="img/donor.png " alt="" class="h-12 w-12">
+                                </span></td>
+                            <td class="box-border border-b px-4 py-3 text-center">Sushan </td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">Sushangmi55@gmail.com
+                            </td>
+                            <td class="box-border border-b px-4 py-3 text-center">18Sep2020</td>
+                            <td class="box-border border-b px-4 py-3 text-center">10:55-11:30</td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">9876543210</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Dr.vatiz</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Depression</td>
+
+                        </tr>
+                        <tr
+                            class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-100 hover:bg-gray-200 hover:shadow-sm">
+                            <td class="box-border border-b px-4 py-3 text-center"><span
+                                    class=" flex list-none justify-center items-center ">
+                                    <img src="img/donor.png " alt="" class="h-12 w-12">
+                                </span></td>
+                            <td class="box-border border-b px-4 py-3 text-center">Sushan </td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">Sushangmi55@gmail.com
+                            </td>
+                            <td class="box-border border-b px-4 py-3 text-center">18Sep2020</td>
+                            <td class="box-border border-b px-4 py-3 text-center">10:55-11:30</td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">9876543210</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Dr.vatiz</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Depression</td>
+
+                        </tr>
+                        <tr
+                            class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-100 hover:bg-gray-200 hover:shadow-sm">
+                            <td class="box-border border-b px-4 py-3 text-center"><span
+                                    class=" flex list-none justify-center items-center ">
+                                    <img src="img/donor.png " alt="" class="h-12 w-12">
+                                </span></td>
+                            <td class="box-border border-b px-4 py-3 text-center">Sushan </td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">Sushangmi55@gmail.com
+                            </td>
+                            <td class="box-border border-b px-4 py-3 text-center">18Sep2020</td>
+                            <td class="box-border border-b px-4 py-3 text-center">10:55-11:30</td>
+                            <td class="box-border border-b px-4 py-3 text-center text-blue-600">9876543210</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Dr.vatiz</td>
+                            <td class="box-border border-b px-4 py-3 text-center">Depression</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!--footer-->
+        <div class="w-full bg-green-500 py-4 px-3 flex justify-center">
+            kdbfkjdbjfb
+        </div>
+    </div>
+</body>
+<script>
+    new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: {
+            labels: [1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050],
+            datasets: [{
+                data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
+                label: "Patients 2020",
+                borderColor: "#3e95cd",
+                fill: false
+            }, {
+                data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
+                label: "Patients 2019",
+                borderColor: "#8e5ea2",
+                fill: false
+            },
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            // title: {
+            //     display: true,
+            //     text: 'World population per region (in millions)'
+            // }
+        }
+    });
+
+</script>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['week 1', 'week 2', 'week 3', 'week 4'],
+            datasets: [{
+
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+
+
+                ],
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+<script>
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['week 1', 'week 2', 'week 3', 'week 4'],
+            datasets: [{
+
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+
+
+                ],
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+<script>
+    var ctx = document.getElementById('myChart3').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['0-10', '10-20', '20-30', '30-40', '40+'],
+            datasets: [{
+
+                data: [12, 19, 3, 5, 2],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgb(15, 15, 15)'
+
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+
+
+                ],
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+<script>
+    var ctx = document.getElementById('myChart4').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Male', 'Female'],
+            datasets: [{
+
+                data: [12, 19],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+
+                ],
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+<script>
+    var ctx = document.getElementById('myChart5').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'polarArea',
+        data: {
+            labels: ['Gynecology', 'Cardiology', 'Denstistry', 'Laboratory', 'Pulmonology'],
+            datasets: [{
+
+                data: [12, 19, 20, 15, 12],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgb(15, 15, 15)'
+
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+
+                ],
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+
+</html>
