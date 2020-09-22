@@ -42,7 +42,7 @@
                     style="margin-left:244px;"></i>
             </div>
             <!--notification-->
-            <div class="flex justify-center w-8 mr-5">
+            <div class="flex justify-center w-8 mr-6">
                 <div x-data="{ dropdownOpen:true }" class="relative">
                     <button @click="dropdownOpen = !dropdownOpen"
                         class="relative z-10 block rounded-md p-2 focus:outline-none">
@@ -61,32 +61,141 @@
                     </div>
 
                     <div x-show="dropdownOpen"
-                        class="absolute right-0 mt-2 bg-gray-100 rounded-md shadow-lg overflow-hidden z-20"
+                        class="absolute right-0 mt-2 bg-white rounded-md shadow-lg overflow-hidden z-20"
                         style="width:20rem;">
                         <!--noti header-->
-                        <div class="w-full flex justify-center p-3 font-semibold box-border border-b">
-                            You have 10 New Notifications
+                        <div class="w-full flex justify-center px-5 py-4 ">
+                            <span class="flex-1 font-semibold text-lg">
+                                Notifications
+                            </span>
+                            <a href="#" class="text-red-600">
+                                Clear All
+                            </a>
                         </div>
                         <!--noti content-->
-                        <div class="w-full flex flex-col overflow-auto h-64">
-                            <div class="w-full flex items-center px-2 py-3 hover:bg-gray-100 hover:shadow-md">
-                                <div class="w-12">
-                                    <img src="{{user.profile.profile_pic.url}}" alt="profile"
-                                        class="h-12 w-12 rounded-full">
+                        <div class="w-full flex flex-col overflow-auto overflow-x-hidden" style="height: 22rem;">
+                            <div
+                                class="flex w-full px-5 py-3 items-center hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-105">
+                                <div
+                                    class="text-md bg-gray-200 h-8 w-8 justify-center items-center flex p-1 rounded-full">
+                                    <i class="fas fa-heart text-black"></i>
                                 </div>
                                 <div class="flex-1 flex flex-col ml-4">
-                                    <span class="text-gray-800">
-                                        Sushan has purchases the BMW
+                                    <span class="text-sm">
+                                        Sushan Liked your Photo
                                     </span>
-                                    <p class="text-gray-700 text-sm font-semibold">
-                                        just now
-                                    </p>
+                                    <span class="text-xs text-gray-600">
+                                        20 minutes ago
+                                    </span>
                                 </div>
-                            </div>
 
+                            </div>
+                            <div
+                                class="flex w-full px-5 py-3 items-center hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-105">
+                                <div
+                                    class="text-md bg-gray-200 h-8 w-8 justify-center items-center flex p-1 rounded-full">
+                                    <i class="fas fa-users text-black"></i>
+                                </div>
+                                <div class="flex-1 flex flex-col ml-4">
+                                    <span class="text-sm">
+                                        New users registered
+                                    </span>
+                                    <span class="text-xs text-gray-600">
+                                        20 minutes ago
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div
+                                class="flex w-full px-5 py-3 items-center hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-105">
+                                <div
+                                    class="text-md bg-gray-200 h-8 w-8 justify-center items-center flex p-1 rounded-full">
+                                    <i class="fas fa-share-alt text-black"></i>
+                                </div>
+                                <div class="flex-1 flex flex-col ml-4">
+                                    <span class="text-sm">
+                                        Sushan Shared yout post
+                                    </span>
+                                    <span class="text-xs text-gray-600">
+                                        20 minutes ago
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div
+                                class="flex w-full px-5 py-3 items-center hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-105">
+                                <div
+                                    class="text-md bg-gray-200 h-8 w-8 justify-center items-center flex p-1 rounded-full">
+                                    <i class="fas fa-users text-black"></i>
+                                </div>
+                                <div class="flex-1 flex flex-col ml-4">
+                                    <span class="text-sm">
+                                        New users registered
+                                    </span>
+                                    <span class="text-xs text-gray-600">
+                                        20 minutes ago
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div
+                                class="flex w-full px-5 py-3 items-center hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-105">
+                                <div
+                                    class="text-md bg-gray-200 h-8 w-8 justify-center items-center flex p-1 rounded-full">
+                                    <i class="fas fa-envelope text-black"></i>
+                                </div>
+                                <div class="flex-1 flex flex-col ml-4">
+                                    <span class="text-sm">
+                                        You have new message
+                                    </span>
+                                    <span class="text-xs text-gray-600">
+                                        20 minutes ago
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div
+                                class="flex w-full px-5 py-3 items-center hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-105">
+                                <div
+                                    class="text-md bg-gray-200 h-8 w-8 justify-center items-center flex p-1 rounded-full">
+                                    <i class="fas fa-heart text-black"></i>
+                                </div>
+                                <div class="flex-1 flex flex-col ml-4">
+                                    <span class="text-sm">
+                                        Sushan Liked your Photo
+                                    </span>
+                                    <span class="text-xs text-gray-600">
+                                        20 minutes ago
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div
+                                class="flex w-full px-5 py-3 items-center hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer transform hover:scale-105">
+                                <div
+                                    class="text-md bg-gray-200 h-8 w-8 justify-center items-center flex p-1 rounded-full">
+                                    <i class="fas fa-users text-black"></i>
+                                </div>
+                                <div class="flex-1 flex flex-col ml-4">
+                                    <span class="text-sm">
+                                        New users registered
+                                    </span>
+                                    <span class="text-xs text-gray-600">
+                                        20 minutes ago
+                                    </span>
+                                </div>
+
+                            </div>
                         </div>
-                        <a href="#" class="block bg-gray-800 text-white text-center font-bold py-2">See all
-                            notifications</a>
+                        <a href="#" class="flex justify-center py-5">
+                            <div
+                                class="bg-blue-600 text-white font-semibold px-10 transition-all duration-300 ease-in-out hover:bg-blue-700 py-2 rounded-lg flex items-center">
+                                <span>
+                                    View all notifications
+                                </span>
+                                <i class="far fa-calendar-alt ml-4"></i>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
