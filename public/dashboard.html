@@ -43,13 +43,18 @@
             </div>
             <!--notification-->
             <div class="flex justify-center w-8 mr-5">
-                <div x-data="{ dropdownOpen:false }" class="relative">
+                <div x-data="{ dropdownOpen:true }" class="relative">
                     <button @click="dropdownOpen = !dropdownOpen"
                         class="relative z-10 block rounded-md p-2 focus:outline-none">
-                        <a> <i class="far fa-bell text-3xl text-gray-700"></i></a>
-                        <span id="hidenotinum"
-                            class="absolute top-0 right-0 bg-yellow-500 text-xs rounded-full h-4 w-4 text-center mt-1 text-gray-800 ">
-                            30 </span>
+                        <a> <i class="fas fa-bell text-3xl text-gray-600"></i></a>
+                        <div id="hidenotinum"
+                            class="absolute top-0 right-0 bg-white h-8 w-8 text-xs rounded-full p-1 text-center  text-gray-800 flex"
+                            style="margin-top: -5px; margin-right: -13px;">
+                            <span
+                                class="bg-red-600 text-gray-200 h-6 w-6 rounded-full flex items-center justify-center">
+                                5
+                            </span>
+                        </div>
                     </button>
 
                     <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10">
@@ -530,9 +535,18 @@
             </div>
         </section>
         <!--footer-->
-        <div class="w-full bg-green-500 py-4 px-3 flex justify-center">
-            kdbfkjdbjfb
-        </div>
+        <footer class="w-full py-4  shadow-lg flex justify-center px-20 items-center">
+            <div class="flex-1 flex justify-start">
+                <span class="text-lg text-gray-600
+                ">Dashboard</span>
+            </div>
+            <div class="flex-1 flex justify-end items-center">
+                <span class="text-lg">Version 1.0</span>
+                <span class="text-blue-600  ml-3 text-3xl">
+                    <i class="fas fa-cogs"></i>
+                </span>
+            </div>
+        </footer>
     </div>
 </body>
 <script>
