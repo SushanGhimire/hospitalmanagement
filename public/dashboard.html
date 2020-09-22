@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="blood.css">
     <link rel="stylesheet" href="Feedback.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <style>
         .dropdown-img:hover .dropdown-menu {
             display: block;
@@ -26,7 +27,7 @@
 
 <body class="h-screen w-screen flex flex-col overflow-y-hidden font-header ">
     <div class="w-full h-full flex flex-col">
-        <nav class="w-full flex justify-between px-5  shadow-lg bg-white items-center">
+        <nav class="w-full flex justify-between px-5  shadow-md bg-white items-center">
             <div class="w-64 flex items-center text-xl font-bold  font-header">
                 <span class=" overflow-hidden ">
                     <img src="img/doctor-logo.png" alt="" class="h-16 object-cover">
@@ -40,13 +41,57 @@
                 <i class="fas fa-search text-gray-500  text-xl absolute buttom-0 left-0 "
                     style="margin-left:244px;"></i>
             </div>
-            <div class="dropdown-img inline-block relative w-48 py-1 text-right x-50 ">
+            <!--notification-->
+            <div class="flex justify-center w-8 mr-5">
+                <div x-data="{ dropdownOpen:false }" class="relative">
+                    <button @click="dropdownOpen = !dropdownOpen"
+                        class="relative z-10 block rounded-md p-2 focus:outline-none">
+                        <a> <i class="far fa-bell text-3xl text-gray-700"></i></a>
+                        <span id="hidenotinum"
+                            class="absolute top-0 right-0 bg-yellow-500 text-xs rounded-full h-4 w-4 text-center mt-1 text-gray-800 ">
+                            30 </span>
+                    </button>
 
+                    <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10">
+                    </div>
+
+                    <div x-show="dropdownOpen"
+                        class="absolute right-0 mt-2 bg-gray-100 rounded-md shadow-lg overflow-hidden z-20"
+                        style="width:20rem;">
+                        <!--noti header-->
+                        <div class="w-full flex justify-center p-3 font-semibold box-border border-b">
+                            You have 10 New Notifications
+                        </div>
+                        <!--noti content-->
+                        <div class="w-full flex flex-col overflow-auto h-64">
+                            <div class="w-full flex items-center px-2 py-3 hover:bg-gray-100 hover:shadow-md">
+                                <div class="w-12">
+                                    <img src="{{user.profile.profile_pic.url}}" alt="profile"
+                                        class="h-12 w-12 rounded-full">
+                                </div>
+                                <div class="flex-1 flex flex-col ml-4">
+                                    <span class="text-gray-800">
+                                        Sushan has purchases the BMW
+                                    </span>
+                                    <p class="text-gray-700 text-sm font-semibold">
+                                        just now
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <a href="#" class="block bg-gray-800 text-white text-center font-bold py-2">See all
+                            notifications</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown-img inline-block relative py-1 text-right x-50 mr-12">
                 <span class=" flex list-none justify-center items-center ">
                     <img src="img/donor.png " alt="" class="h-12 w-12">
                     <i class="fas fa-chevron-down ml-2"></i>
                 </span>
-                <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 w-full button-0 right-0 mr-1  px-3 z-50 ">
+                <ul class="dropdown-menu absolute hidden  text-gray-700 pt-1 w-48 button-0 right-0  -mr-12 px-3 z-50 ">
                     <li
                         class="text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
                         <a href="#" class="rounded-t bg-gray-300 hover:bg-red-600 hover:text-white py-2 px-4 block"
@@ -67,7 +112,7 @@
             </div>
         </nav>
         <!--header-->
-        <header class="w-full flex justify-center mt-3 py-2">
+        <header class="w-full flex justify-center mt-3 py-2 shadow-sm">
             <!--dashboard-->
             <div class="inline-block relative w-48 py-1 text-right  ">
                 <span class="flex list-none justify-center cursor-pointer font-semibold text-gray-800">
@@ -356,14 +401,14 @@
                 <table class="table-auto border w-full mt-5 mb-5">
                     <thead>
                         <tr class="bg-gray-200 text-black">
-                            <th class="px-4 py-2">Photo</th>
-                            <th class="px-4 py-2"> Name</th>
-                            <th class="px-4 py-2">Email</th>
-                            <th class="px-4 py-2">Date</th>
-                            <th class="px-4 py-2">Visit Time</th>
-                            <th class="px-4 py-2">Number</th>
-                            <th class="px-4 py-2">Doctor</th>
-                            <th class="px-4 py-2">Injury/Condition</th>
+                            <th class="px-4 py-3">Photo</th>
+                            <th class="px-4 py-3"> Name</th>
+                            <th class="px-4 py-3">Email</th>
+                            <th class="px-4 py-3">Date</th>
+                            <th class="px-4 py-3">Visit Time</th>
+                            <th class="px-4 py-3">Number</th>
+                            <th class="px-4 py-3">Doctor</th>
+                            <th class="px-4 py-3">Injury/Condition</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -561,7 +606,7 @@
 <script>
     var ctx = document.getElementById('myChart2').getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: {
             labels: ['week 1', 'week 2', 'week 3', 'week 4'],
             datasets: [{
